@@ -1,0 +1,142 @@
+header {
+	align-items: center;
+	background-color: @b;
+	border-bottom: 1px solid @blanco;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 1rem;
+	position: relative;
+	input[type="checkbox"] {
+		display: none;
+	}
+	.hamburger {
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		height: 30px;
+		justify-content: space-between;
+		width: 30px;
+	}
+}
+
+header {
+	.hamburger {
+		.line {
+			background-color: @negro;
+			height: 3px;
+			transition: all 0.3s ease-in-out;
+			width: @ancho;
+		}
+	}
+	.branding {
+		align-items: center;
+		color: @negro;
+		display: flex;
+		flex: 1;
+		font-size: 1.5rem;
+		font-weight: 700;
+		margin-left: 1rem;
+		text-align: center;
+		text-decoration: none;
+		img {
+			border-radius: 50%;
+			height: 50px;
+			margin-right: 10px;
+			width: 50px;
+		}
+	}
+	nav {
+		align-items: flex-start;
+		background-color: @b;
+		display: flex;
+		flex-direction: column;
+		height: 0;
+		justify-content: flex-start;
+		left: 0;
+		overflow: hidden;
+		position: absolute;
+		top: 100%;
+		transition: all 0.3s ease-in-out;
+		width: @ancho;
+		z-index: 100;
+		ul {
+			align-items: flex-start;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			width:@ancho;
+			li {
+				border-bottom: 1px solid @blanco;
+				width:@ancho;
+				a {
+					color: @negro;
+					display: block;
+					font-size: 1.2rem;
+					font-weight: 700;
+					padding: 1rem;
+					text-decoration: none;
+					transition: all 0.3s ease-in-out;
+					&:hover {
+						background-color: @negro;
+						color: @blanco;
+					}
+				}
+			}
+		}
+	}
+	#check {
+		&:checked~nav {
+			height: 100vh;
+		}
+	}
+}
+
+
+@media (min-width: 720px) {
+    header {
+        justify-content: space-between;
+        padding: 0 2rem;
+
+        .hamburger {
+            display: none;
+        }
+
+        .branding {
+            margin-left: 0;
+            margin-right: 2rem;
+        }
+
+        nav {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            height: 100%;
+            max-width: 500px;
+
+            ul {
+                flex-direction: row;
+                justify-content: flex-end;
+
+                li {
+                    border: none;
+
+                    a {
+                        display: inline-block;
+                        padding: 0.5rem 0.75rem;
+
+                        &:hover {
+                            background-color: @b;
+                            border-bottom: @negro 2px solid;
+                            color: @negro;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

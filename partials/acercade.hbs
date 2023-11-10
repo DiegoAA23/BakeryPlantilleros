@@ -1,0 +1,15 @@
+<section class="about">
+    <h2>About Us</h2>
+    {{#each parrafos}}
+    <p>{{texto}}</p>
+    {{/each}}
+    <a href="#">Learn More</a>
+    <section class="workers">
+        {{#each workers}}
+        <div class="worker">
+            <h3>{{titulo}}</h3>
+            <img src="{{url}}" alt="{{alt}}">
+        </div>
+        {{/each}}
+    </section>
+</section>
